@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
+import playground
+
+# this is basically a request controller, which forwards all requests to /playground, to the url functions 
+# defined in playground/urls.py
+# Note - it will read/chop /playground, so the urls in the playground urls do not need to have /playground in them
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('playground/', include('playground.urls'))
 ]
