@@ -5,5 +5,5 @@ from . import views
 
 urlpatterns = [
     path('hello/', views.say_hello),
-    path('allApps/', views.getAllApps)
+    path('appID/<str:gameName>', views.appID)
 ]
